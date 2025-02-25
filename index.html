@@ -40,6 +40,10 @@
             margin-bottom: 10px;
             color: #145a32;
         }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
         .cta-button {
             display: inline-block;
             padding: 15px 30px;
@@ -78,30 +82,62 @@
         .social-links a:hover {
             background: #1d8348;
         }
+        .show-email-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background: transparent;
+            color: #145a32;
+            font-size: 14px;
+            font-weight: normal;
+            border: none;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .show-email-button:hover {
+            color: #1d8348;
+        }
+        .hidden-email {
+            display: none;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #145a32;
+        }
         @media (max-width: 600px) {
             h1 { font-size: 26px; }
             p, li { font-size: 16px; }
             .cta-button { font-size: 18px; padding: 12px 20px; }
         }
     </style>
+    <script>
+        function showEmail() {
+            var emailElement = document.getElementById("email-info");
+            if (emailElement.style.display === "none" || emailElement.style.display === "") {
+                emailElement.style.display = "block";
+            } else {
+                emailElement.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <h1>De Sousa BootCamp 2025</h1>
         <p>Start Date: March 2nd, 2025</p>
         <p>Only 10 spaces available! Secure your place now.</p>
-        <p>One off payment.</p>
+        <p>One Off Payment For Life.</p>
         <p>3 weeks of BootCamp training that consists of:</p>
         <ul>
-            <li>Week 1: Beginner Level</li>
-            <li>Week 2: Advanced Level</li>
-            <li>Week 3: Live Trades with me</li>
+            <p>Week 1: Beginner Level</p>
+            <p>Week 2: Advanced Level</p>
+            <p>Week 3: Live Trades with me</p>
         </ul>
         <p><strong>Inside the BootCamp you will learn:</strong></p>
         <ul>
-            <li>Technical strategy: Support & Resistance, Supply & Demand, Trendlines, Candle Patterns, Sniper Entries</li>
-            <li>Fundamentals: How to read the news for Bullish or Bearish positions</li>
-            <li>All live courses will be recorded</li>
+            <p>Technical strategy: Support & Resistance, Supply & Demand, Trendlines, Candle Patterns, Sniper Entries</p>
+            <p>Fundamentals: How to read the news for Bullish or Bearish positions</p>
+            <p>All live courses will be recorded</p>
         </ul>
         <p><strong>After payment, you will receive an EXCLUSIVE TELEGRAM LINK.</strong></p>
         <p><strong>No Refund Policy: </strong>Once you purchase the De Sousa BootCamp 2025 course, there is NO REFUND.</p>
@@ -112,6 +148,8 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
             </a>
         </div>
+        <button class="show-email-button" onclick="showEmail()">More Info</button>
+        <p id="email-info" class="hidden-email">info@norbertods23.co.uk</p>
     </div>
 </body>
 </html>
